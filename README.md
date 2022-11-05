@@ -1,20 +1,35 @@
 # Spotify
 
-Salut les gars, pour le projet Spotify je vous propose des pistes à approfondir pour qu'on puisse avancer alors si vous avez des suggestions, je suis preneur. Concerant l'organisation du projet, je vois 3 axes:
+Salut les gars,<br/>
+Pour le projet Spotify je vous propose des pistes à approfondir pour qu'on puisse avancer alors si vous avez des suggestions, je suis preneur. Concerant l'organisation du projet, je vois 4 parties:
+<br/><br/><br/>
 
-- Data retrieval + data preprocessing: récupération de la donnée (via [Kaggle](https://www.kaggle.com/code/stpeteishii/spotify-popularity-predict-visualize-importance/data) ou via une API, comme [Spotipy](https://spotipy.readthedocs.io/en/2.21.0/#) ) et nettoyage de la donnée en fonction de nos besoins. 
+- [PARTIE 1 -> 1 personne] Data retrieval + data preprocessing: 
 
-- Exploratory Data Analysis (EDA) + clustering: analyse du dataset de long en large (analyse des NaN, lignes dupliquées, données incohérentes, ..) pour une compréhension parfaite des relations entre features (visualisation simple avec la librairie [Plotly](https://plotly.com/python/). L'idée serait de comprendre la répartition/distribution de la data pour certaines features (voir ci-dessous la description des features) et d'établir potentiellement des relations feature-feature. On pourrait également faire du **clustering** ([K-NN, K-Means](https://becominghuman.ai/comprehending-k-means-and-knn-algorithms-c791be90883d)) pour comprendre les différents groupes de tracks existants ou encore faire de **l'analyse de sentiments** (avec [TextBloB](https://towardsdatascience.com/my-absolute-go-to-for-sentiment-analysis-textblob-3ac3a11d524)) sur le track_name pour explorer le lien popularity = f(track_name).
+Récupération de la donnée (via [Kaggle](https://www.kaggle.com/code/stpeteishii/spotify-popularity-predict-visualize-importance/data) ou via une API, comme [Spotipy](https://spotipy.readthedocs.io/en/2.21.0/#) ) et nettoyage de la donnée en fonction de nos besoins. On a déjà les données via Kaggle donc on pourrait envisager de récupérer de la data par API.
+<br/><br/>
 
-- Popularity prediction: analyse des *features importances* liées au calcul du score de popularity et prédiction du score de popularité (LGBM, XGBoost, ..). L'idée serait de nettoyer le dataset puis de le split l'entrainement du modèle et de faire des comparaisons d'efficacité entre algorithmes.
+- [PARTIE 2 -> 1-2 personnes] Exploratory Data Analysis (EDA) + clustering: 
 
-- Recommender System (content based filtering): création d'un système de recommandation s'appuyant sur le contenu (content based filtering). L'idée serait de faire du **[One Hot Encoding](https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/)** pour recommander des tracks similaires (par **[cosine similarity](https://towardsdatascience.com/hands-on-content-based-recommender-system-using-python-1d643bf314e4)** par exemple)
+Analyse du dataset de long en large (analyse des NaN, lignes dupliquées, données incohérentes, ..) pour une compréhension parfaite des relations entre features (visualisation simple avec la librairie [Plotly](https://plotly.com/python/). L'idée serait de comprendre la répartition/distribution de la data pour certaines features (voir ci-dessous la description des features) et d'établir potentiellement des relations feature-feature. On pourrait également faire du **clustering** ([K-NN, K-Means](https://becominghuman.ai/comprehending-k-means-and-knn-algorithms-c791be90883d)) pour comprendre les différents groupes de tracks existants ou encore faire de **l'analyse de sentiments** (avec [TextBloB](https://towardsdatascience.com/my-absolute-go-to-for-sentiment-analysis-textblob-3ac3a11d524)) sur le track_name pour explorer le lien popularity = f(track_name).
+<br/><br/>
 
+- [PARTIE 3 -> 1-2 personnes] Popularity prediction: 
+
+Analyse des *features importances* liées au calcul du score de popularity et prédiction du score de popularité ([LGBM](https://lightgbm.readthedocs.io/en/v3.3.2/), [XGBoost](https://xgboost.readthedocs.io/en/stable/), ..). L'idée serait de nettoyer le dataset puis de le split l'entrainement du modèle et de faire des comparaisons d'efficacité entre algorithmes.
+<br/><br/>
+
+- [PARTIE 4 -> 1-2 personnes] Recommender System (content based filtering): 
+
+Création d'un système de recommandation s'appuyant sur le contenu (content based filtering). L'idée serait de faire du **[One Hot Encoding](https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/)** pour recommander des tracks similaires (par **[cosine similarity](https://towardsdatascience.com/hands-on-content-based-recommender-system-using-python-1d643bf314e4)** par exemple). Il existe pleins de façons de faire !
+<br/><br/><br/>
 
 Les features pourraient se répartir en 3 groupes:
 1. Metadata (track_id, artists, album_name, track_genre, popularity)
 2. Audio (MOOD: danceability, valence, energy, tempo) + (PROPERTIES: loudness, speechiness, instrumentalness) + (CONTEXT: duration_ms, liveness, acousticness) + (METADATA: explicit, key, mode, time_signature)
 3. Text (track_name)
+
+
 
 
 ### 
