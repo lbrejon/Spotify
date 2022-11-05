@@ -1,7 +1,23 @@
 # Spotify
 
+Salut les gars, pour le projet Spotify je vous propose des pistes à approfondir pour qu'on puisse avancer alors si vous avez des suggestions, je suis preneur. Concerant l'organisation du projet, je vois 3 axes:
 
-### https://www.kaggle.com/code/stpeteishii/spotify-popularity-predict-visualize-importance/data
+- Data retrieval + data preprocessing: récupération de la donnée (via [Kaggle](https://www.kaggle.com/code/stpeteishii/spotify-popularity-predict-visualize-importance/data) ou via une API, comme [Spotipy](https://spotipy.readthedocs.io/en/2.21.0/#) ) et nettoyage de la donnée en fonction de nos besoins. 
+
+- Exploratory Data Analysis (EDA) + clustering: analyse du dataset de long en large (analyse des NaN, lignes dupliquées, données incohérentes, ..) pour une compréhension parfaite des relations entre features (visualisation simple avec la librairie [Plotly](https://plotly.com/python/). L'idée serait de comprendre la répartition/distribution de la data pour certaines features (voir ci-dessous la description des features) et d'établir potentiellement des relations feature-feature. On pourrait également faire du **clustering** ([K-NN, K-Means](https://becominghuman.ai/comprehending-k-means-and-knn-algorithms-c791be90883d)) pour comprendre les différents groupes de tracks existants ou encore faire de **l'analyse de sentiments** (avec [TextBloB](https://towardsdatascience.com/my-absolute-go-to-for-sentiment-analysis-textblob-3ac3a11d524)) sur le track_name pour explorer le lien popularity = f(track_name).
+
+- Popularity prediction: analyse des *features importances* liées au calcul du score de popularity et prédiction du score de popularité (LGBM, XGBoost, ..). L'idée serait de nettoyer le dataset puis de le split l'entrainement du modèle et de faire des comparaisons d'efficacité entre algorithmes.
+
+- Recommender System (content based filtering): création d'un système de recommandation s'appuyant sur le contenu (content based filtering). L'idée serait de faire du **[One Hot Encoding](https://machinelearningmastery.com/how-to-one-hot-encode-sequence-data-in-python/)** pour recommander des tracks similaires (par **[cosine similarity](https://towardsdatascience.com/hands-on-content-based-recommender-system-using-python-1d643bf314e4)** par exemple)
+
+
+Les features pourraient se répartir en 3 groupes:
+1. Metadata (track_id, artists, album_name, track_genre, popularity)
+2. Audio (MOOD: danceability, valence, energy, tempo) + (PROPERTIES: loudness, speechiness, instrumentalness) + (CONTEXT: duration_ms, liveness, acousticness) + (METADATA: explicit, key, mode, time_signature)
+3. Text (track_name)
+
+
+### 
 
 ## About Dataset
 #### Content
