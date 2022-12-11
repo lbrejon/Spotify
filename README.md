@@ -1,6 +1,6 @@
 # Spotify
 
-Salut les gars,<br/>
+<!-- Salut les gars,<br/>
 Pour le projet Spotify je vous propose des pistes à approfondir pour qu'on puisse avancer alors si vous avez des suggestions, je suis preneur. Concerant l'organisation du projet, je vois 4 parties:
 <br/><br/><br/>
 
@@ -30,7 +30,7 @@ Les features pourraient se répartir en 3 groupes:
 3. Text (track_name)
 
 
-
+ -->
 
 ### 
 
