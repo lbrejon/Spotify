@@ -2,5 +2,14 @@
 env_spotify/
 
 
-##### notebooks
-notebooks/main2.ipynb
+##### data
+data/raw/*.zip
+
+
+##### pycache
+notebooks/__pycache__/*
+data/__pycache__/*
+
+
+##### folder
+to_clean/*
