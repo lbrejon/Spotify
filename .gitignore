@@ -3,7 +3,8 @@ env_spotify/
 
 
 ##### data
-data/raw/*.zip
+data/raw/tracks.zip
+data/raw/tracks.csv
 
 
 ##### pycache
